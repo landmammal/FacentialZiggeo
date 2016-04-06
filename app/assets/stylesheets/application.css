@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+ .displays {
+   float: right;
+   /*display: inline-block;
+   margin-left: 50%;*/
+ }
+
+ .recorder {
+   float: left;
+   margin-bottom: 26%;
+ }

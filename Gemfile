@@ -9,8 +9,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem "Ziggeo"
-
-gem 'figaro'
+gem "responders"
+# gem 'figaro'
 
 group :production do
   gem 'pg'

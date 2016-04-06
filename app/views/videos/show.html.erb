@@ -1,0 +1,24 @@
+  <div class="displays">
+    <ziggeo
+      ziggeo-video= <%= @video.token %>>
+    </ziggeo>
+  </div>
+
+
+
+
+  
+
+  <script >
+
+
+        ZiggeoApi.Events.on("submitted", function (data) {
+            var video = data.video.token
+            $.ajax({url: "https://localhost:3000/videos/", method: "post"});
+        });
+
+  </script>
+
+
+<%= link_to 'Edit', edit_video_path(@video) %> |
+<%= link_to 'Back', videos_path %>

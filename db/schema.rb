@@ -11,10 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160405234957) do
+ActiveRecord::Schema.define(version: 20160406153647) do
 
-  create_table "trainees", force: :cascade do |t|
-    t.string   "lesson"
+  create_table "videos", force: :cascade do |t|
+    t.string   "token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
