@@ -10,20 +10,19 @@
   <ziggeo></ziggeo>
 
   <script >
-
-
         ZiggeoApi.Events.on("submitted", function (data) {
+            console.log("zgeo");
             alert("The video with token " + data.video.token + " has been submitted!");
             var some = data.video.token
             alert(some);
         });
   </script>
 
-<% @videos.each do |v| %>
-<!-- pick a video from a list  -->
-  <!-- <a href='#'><%= v %></a> -->
-  <%= link_to v %> <br>
-<% end %>
+# <% @videos.each do |v| %>
+# <!-- pick a video from a list  -->
+#   <!-- <a href='#'><%= v %></a> -->
+#   <%= link_to v %> <br>
+# <% end %>
 </div>
 
 <!-- play that video in the player -->
@@ -48,8 +47,7 @@
   <tbody>
     <% @videos.each do |video| %>
       <tr>
-        <!-- <td><%= video.token %></td> -->
-        <%= render video %>
+        <td><%= video.token %></td>
         <td><%= link_to 'Show', video %></td>
         <td><%= link_to 'Edit', edit_video_path(video) %></td>
         <td><%= link_to 'Destroy', video, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -60,4 +58,4 @@
 
 <br>
 
-<%= link_to 'New Video', new_video_path %>
+<%= link_to 'New Video', new_video_path, remote: true, class: "new-video-button" %>

@@ -13,13 +13,39 @@
  *= require_tree .
  *= require_self
  */
+  .wrapper {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 0;
+    text-align: left;
+    font-size: 1em;
+    padding-top: 8em;
+  }
+
  .displays {
-   float: right;
-   /*display: inline-block;
-   margin-left: 50%;*/
+   float: lefth;
+   margin: 0 2em 5%;
+   display: inline-block;
+   padding: 0 3%;
+   border-radius: 100%;
  }
 
  .recorder {
-   float: left;
-   margin-bottom: 26%;
+   display: inline-block;
+   margin: 0 2em 80px;
+   padding: 16% 4% 0 4%;
+ }
+
+ .coach {
+   float: right;
+   margin: 0 0 5%;
+   display: inline-block;
+   padding: 17% 2em;
+   border-radius: 100%;
+ }
+
+ div[contenteditable=true] {
+   border: 1px dashed #AAA;
+   width: 290px;
+   padding: 5px;
  }

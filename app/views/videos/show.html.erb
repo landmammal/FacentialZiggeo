@@ -1,19 +1,45 @@
-  <div class="displays">
-    <ziggeo
-      ziggeo-video= <%= @video.token %>>
+  <div class="wrapper">
+    <div class="displays">
+
+      <h3>Situation</h3>
+      <ziggeo
+      ziggeo-width=300
+      ziggeo-height=300>
+      </ziggeo>
+
+      <h3>Example</h3>
+      <ziggeo
+      ziggeo-width=300
+      ziggeo-height=300>
     </ziggeo>
+    </div>
+
+
+    <div class="recorder">
+      <h2>Practice</h2>
+      <ziggeo
+        ziggeo-video= <%= @video.token %>
+        ziggeo-width=400
+        ziggeo-height=450>
+      </ziggeo> <br>
+      <div contenteditable="true" placeholder="Enter text here..."></div>
+    </div>
+    <div class="container">
+
+    </div>
+      <img src="http://placehold.it/350x300">
+
+
   </div>
 
 
 
 
-  
-
   <script >
 
 
         ZiggeoApi.Events.on("submitted", function (data) {
-            var video = data.video.token
+            var video = data.video.tokena
             $.ajax({url: "https://localhost:3000/videos/", method: "post"});
         });
 

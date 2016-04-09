@@ -1,0 +1,2 @@
+$('form').hide();
+$('div#<%= dom_id(@video) %>').replaceWith('<%= j render partial: "video", locals: {video: @video} %>');
