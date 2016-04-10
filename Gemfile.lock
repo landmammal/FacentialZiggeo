@@ -181,7 +181,7 @@ PLATFORMS
 
 DEPENDENCIES
   Ziggeo
-  aws-sdk (< 2)
+  aws-sdk
   bootstrap-generators
   byebug
   coffee-rails (~> 4.1.0)
