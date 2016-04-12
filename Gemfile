@@ -10,7 +10,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem "Ziggeo"
 
-gem 'figaro'
+# gem 'figaro'
 
 group :production do
   gem 'pg'
