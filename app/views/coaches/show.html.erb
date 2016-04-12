@@ -1,0 +1,69 @@
+<div class="wrapper">
+  <div class="displays">
+
+    <h3>Situation</h3>
+    <ziggeo
+    ziggeo-width=300
+    ziggeo-height=300>
+    </ziggeo>
+
+    <h3>Example</h3>
+    <ziggeo
+    ziggeo-width=300
+    ziggeo-height=300>
+  </ziggeo>
+  </div>
+
+
+  <div class="recorder">
+    <h2>Practice</h2>
+    <ziggeo
+      ziggeo-width=400
+      ziggeo-height=450>
+    </ziggeo> <br>
+    <!-- <div contenteditable="true" placeholder="Enter text here..."></div> -->
+
+    <!-- Bubble Start -->
+<div class="bubble-speech bubble-left">
+<h2 class="author">
+  Dialogue
+  </h2>
+
+  <div class="message">
+    Here will go the dialogue that the user needs to read to while recording the example.
+  </div>
+</div>
+<!-- Bubble End -->
+
+  </div>
+  <div class="coach">
+    <h2>Hi, am your coach</h2>
+    <%= image_tag @coach.avatar.url(:square) %> <br>
+     <!-- <img src="http://placehold.it/350x300"> -->
+    <strong>Name:</strong>
+      <%= @coach.name %><br>
+
+    <strong>Email:</strong>
+      <%= @coach.email %><br>
+
+    <strong>Company:</strong>
+      <%= @coach.company %><br>
+  </div>
+</div>
+
+
+
+
+<script >
+      ZiggeoApi.Events.on("submitted", function (data) {
+          var video = data.video.tokena
+          $.ajax({url: "https://localhost:3000/videos/", method: "post"});
+      });
+
+</script>
+
+  <strong>Field:</strong>
+  <%= @coach.field %>
+
+<%= link_to 'Edit', edit_coach_path(@coach) %> |
+<%= link_to 'Back', coaches_path %>
