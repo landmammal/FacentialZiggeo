@@ -1,5 +1,10 @@
 source 'https://rubygems.org'
+gem "google-instant-hangouts"
+gem 'fancybox2-rails'
+gem 'fancybox-rails'
 
+gem 'materialize-sass'
+gem 'bootstrap-generators'
 
 gem 'aws-sdk'
 gem 'paperclip'
@@ -12,8 +17,6 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
-
-gem 'bootstrap-generators'
 
 gem "Ziggeo"
 # gem 'figaro'

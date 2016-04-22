@@ -1,57 +1,66 @@
-<div class="wrapper">
-  <div class="displays">
+  <!-- <div class="wrapper"> -->
+    <div class="displays">
+      <p><a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'"
+        >Live Chat</a></p>
 
-    <h3>Situation</h3>
-    <ziggeo
-    ziggeo-width=300
-    ziggeo-height=300>
-    </ziggeo>
+      <div id="light" class="white_content">
+        <%= instant_hangout topic: 'My Hangout' %>
+          <a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'"
+          >Close</a>
+       </div>
+       <div id="fade" class="black_overlay"></div>
 
-    <h3>Example</h3>
-    <ziggeo
-    ziggeo-width=300
-    ziggeo-height=300>
-  </ziggeo>
+     <h3>Situation</h3>
+        <ziggeo
+          ziggeo-width=300
+          ziggeo-height=300>
+        </ziggeo>
+
+      <h3>Example</h3>
+      <ziggeo
+        ziggeo-video='2142920c6313e3be80f5b92e5462e770'
+        ziggeo-width=300
+        ziggeo-height=300>
+      </ziggeo>
+    </div>
+
+
+    <div class="recorder">
+      <h2>Practice</h2>
+      <ziggeo
+        ziggeo-width=400
+        ziggeo-height=450>
+      </ziggeo> <br>
+      <!-- <div contenteditable="true" placeholder="Enter text here..."></div> -->
+
+      <!-- Bubble Start -->
+  <div class="bubble-speech bubble-left">
+  <h2 class="author">
+    Dialogue
+    </h2>
+
+    <div class="message">
+      Here will go the dialogue that the user needs to read to while recording the example.
+    </div>
   </div>
+  <!-- Bubble End -->
+    </div>
+    <div class="coach">
+      <h2>Hi, am your coach</h2>
+      <%= image_tag @coach.avatar.url(:square) %> <br>
+       <!-- <img src="http://placehold.it/350x300"> -->
+      <strong>Name:</strong>
+        <%= @coach.name %><br>
 
+      <strong>Email:</strong>
+        <%= @coach.email %><br>
 
-  <div class="recorder">
-    <h2>Practice</h2>
-    <ziggeo
-      ziggeo-width=400
-      ziggeo-height=450>
-    </ziggeo> <br>
-    <!-- <div contenteditable="true" placeholder="Enter text here..."></div> -->
-
-    <!-- Bubble Start -->
-<div class="bubble-speech bubble-left">
-<h2 class="author">
-  Dialogue
-  </h2>
-
-  <div class="message">
-    Here will go the dialogue that the user needs to read to while recording the example.
-  </div>
-</div>
-<!-- Bubble End -->
-
-  </div>
-  <div class="coach">
-    <h2>Hi, am your coach</h2>
-    <%= image_tag @coach.avatar.url(:square) %> <br>
-     <!-- <img src="http://placehold.it/350x300"> -->
-    <strong>Name:</strong>
-      <%= @coach.name %><br>
-
-    <strong>Email:</strong>
-      <%= @coach.email %><br>
-
-    <strong>Company:</strong>
-      <%= @coach.company %><br>
-      <br>
-      <%= render 'chat' %>
-  </div>
-</div>
+      <strong>Company:</strong>
+        <%= @coach.company %><br>
+        <br>
+        <%= render 'chat' %>
+    </div>
+<!-- </div> -->
 
 
 
@@ -59,7 +68,6 @@
 <script >
       ZiggeoApi.Events.on("submitted", function (data) {
           var video = data.video.tokena
-          $.ajax({url: "https://localhost:3000/videos/", method: "post"});
       });
 
 </script>
