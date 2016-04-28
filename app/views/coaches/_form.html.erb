@@ -1,37 +1,48 @@
-<%= form_for(@coach) do |f| %>
+<h1>Signup!</h1>
+
+
+<%= form_for(@coach, html: { class: "form-horizontal", role: "form" }) do |f| %>
   <% if @coach.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@coach.errors.count, "error") %> prohibited this coach from being saved:</h2>
+    <div class="alert alert-danger alert-dismissable" role="alert">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <h4><%= pluralize(@coach.errors.count, "error") %> prohibited this user from being saved:</h4>
 
       <ul>
-      <% @coach.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <% @coach.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
+  <div class="col-md-6 col-md-offset-3">
+    <div class="form-group ">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control", placeholder: "Name" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <div class="form-group">
+      <%= f.label "Email" %>
+      <%= f.text_field :email, class: "form-control", placeholder: "Email" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label "Password" %>
+      <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
+    </div>
+
+
+      <div class="form-group">
+        <%= f.label "Password Confirmation" %>
+        <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Password Confirmation" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label "Avatar" %>
+          <%= f.file_field :avatar %>
+        </div>
+
+  <div class="form-group">
+    <%= f.submit class: "btn btn-primary" %>
   </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :company %><br>
-    <%= f.text_field :company %>
-  </div>
-  <div class="field">
-    <%= f.label :field %><br>
-    <%= f.text_field :field %>
-  </div>
-  <div class="field">
-    <%= f.label :avatar %>
-    <%= f.file_field :avatar %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
   </div>
 <% end %>

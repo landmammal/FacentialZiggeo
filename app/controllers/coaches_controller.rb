@@ -1,4 +1,5 @@
 class CoachesController < ApplicationController
+  # before_filter :authorize
   before_action :set_coach, only: [:show, :edit, :update, :destroy]
 
   # GET /coaches
@@ -26,15 +27,15 @@ class CoachesController < ApplicationController
   def create
     @coach = Coach.new(coach_params)
 
-    respond_to do |format|
       if @coach.save
-        format.html { redirect_to @coach, notice: 'Coach was successfully created.' }
-        format.json { render :show, status: :created, location: @coach }
+        session[:coach_id] = @coach.id
+        redirect_to '/'
       else
+        redirect_to '/signup'
         format.html { render :new }
         format.json { render json: @coach.errors, status: :unprocessable_entity }
       end
-    end
+
   end
 
   # PATCH/PUT /coaches/1
@@ -69,6 +70,6 @@ class CoachesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def coach_params
-      params.require(:coach).permit(:name, :email, :company, :field, :avatar, :token)
+      params.require(:coach).permit(:name, :email, :avatar, :password, :password_confirmation)
     end
 end

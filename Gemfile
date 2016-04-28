@@ -1,9 +1,11 @@
 source 'https://rubygems.org'
+gem 'hirb'
 gem "google-instant-hangouts"
 gem 'fancybox2-rails'
 gem 'fancybox-rails'
 
-gem 'materialize-sass'
+# gem 'materialize-sass'
+gem 'bootstrap-sass'
 gem 'bootstrap-generators'
 
 gem 'aws-sdk'
@@ -17,6 +19,8 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
+
+gem 'bcrypt', '~> 3.1.7'
 
 gem "Ziggeo"
 # gem 'figaro'

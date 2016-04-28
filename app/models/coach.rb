@@ -1,4 +1,5 @@
 class Coach < ActiveRecord::Base
+  has_secure_password
   # This method associates the attribute ":avatar" with a file attachment
  has_attached_file :avatar, styles: {
    thumb: '100x100>',

@@ -1,7 +1,22 @@
+<div class="coach">
+  <div class="coach-image">
+    <%= image_tag @coach.avatar.url(:square) %>
+  </div>
+  <br>
+  <%= instant_hangout topic: 'My Hangout' %>
+   <!-- <img src="http://placehold.it/350x300"> -->
+  <strong>Coach:</strong>
+    <%= @coach.name %><br>
+
+  <strong>Hang-Out Email:</strong>
+    <%= @coach.email %><br>
+    <br>
+    <%= render 'chat' %>
+</div>
   <!-- <div class="wrapper"> -->
     <div class="displays">
-      <p><a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'"
-        >Live Chat</a></p>
+      <!-- <p><a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'"
+        >Live Chat</a></p> -->
 
       <div id="light" class="white_content">
         <%= instant_hangout topic: 'My Hangout' %>
@@ -10,26 +25,27 @@
        </div>
        <div id="fade" class="black_overlay"></div>
 
-     <h3>Situation</h3>
+     <h3>Scenario</h3>
         <ziggeo
-          ziggeo-width=300
+          ziggeo-width=450
           ziggeo-height=300>
         </ziggeo>
 
-      <h3>Example</h3>
+      <h3>Role Model</h3>
       <ziggeo
         ziggeo-video='2142920c6313e3be80f5b92e5462e770'
-        ziggeo-width=300
-        ziggeo-height=300>
+        ziggeo-width=450
+        ziggeo-height=390>
       </ziggeo>
     </div>
 
 
     <div class="recorder">
-      <h2>Practice</h2>
+      <h3>Practice</h3>
       <ziggeo
-        ziggeo-width=400
-        ziggeo-height=450>
+        ziggeo-video="3f733ad37576a10c81ffc6038eab3b29"
+        ziggeo-width=800
+        ziggeo-height=605>
       </ziggeo> <br>
       <!-- <div contenteditable="true" placeholder="Enter text here..."></div> -->
 
@@ -43,23 +59,9 @@
       Here will go the dialogue that the user needs to read to while recording the example.
     </div>
   </div>
+  </div>
   <!-- Bubble End -->
-    </div>
-    <div class="coach">
-      <h2>Hi, am your coach</h2>
-      <%= image_tag @coach.avatar.url(:square) %> <br>
-       <!-- <img src="http://placehold.it/350x300"> -->
-      <strong>Name:</strong>
-        <%= @coach.name %><br>
 
-      <strong>Email:</strong>
-        <%= @coach.email %><br>
-
-      <strong>Company:</strong>
-        <%= @coach.company %><br>
-        <br>
-        <%= render 'chat' %>
-    </div>
 <!-- </div> -->
 
 
@@ -71,9 +73,3 @@
       });
 
 </script>
-
-  <strong>Field:</strong>
-  <%= @coach.field %>
-
-<%= link_to 'Edit', edit_coach_path(@coach) %> |
-<%= link_to 'Back', coaches_path %>

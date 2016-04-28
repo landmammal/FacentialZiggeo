@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20160410234303) do
   create_table "coaches", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
+    t.string   "password_digest"
     t.string   "company"
     t.string   "field"
     t.datetime "created_at",          null: false

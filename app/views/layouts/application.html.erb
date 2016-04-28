@@ -1,7 +1,30 @@
+ <!-- /*************************************************************************
+ *
+ * David L. Kay Educational Productions
+ * __________________
+ *
+ *  [2011] - [2016] Facential:vR
+ *  All Rights Reserved.
+ *
+ * NOTICE:  All information contained herein is, and remains
+ * the property of David L. Kay Educational Productions and its suppliers,
+ * if any.  The intellectual and technical concepts contained
+ * herein are proprietary to David L. Kay Educational Productions
+ * and its suppliers and may be covered by U.S. and Foreign Patents,
+ * patents in process, and are protected by trade secret or copyright law.
+ * Dissemination of this information or reproduction of this material
+ * is strictly forbidden unless prior written permission is obtained
+ * from David L. Kay Educational Productions.
+
+Code for Facential:vR ver. 2.0.0 build 1
+by Rodger Rodriquez
+ */ -->
+
 <!DOCTYPE html>
 <html>
 <head>
   <title>Ziggeo Facential Version</title>
+  <link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900|Orbitron:900' rel='stylesheet' type='text/css'>
 
 
@@ -12,6 +35,8 @@
   </script>
 
   <!-- bootstrap font-awesome cdn -->
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -21,38 +46,59 @@
 <body>
 
 
-  <div class="menuBackground">
-  	<div class="center myMenu">
-  		<ul class="dropDownMenu">
-  			<li><a href="#">Home</a></li>
-  			<li><a href="#">Contact</a>
-  				<ul>
-  					<li><a href="#">info</a></li>
-  				</ul>
-  			</li>
-        <li><a href="#">About</a>
-          <ul>
-            <li><a href="#">Start up story</a></li>
-          </ul>
-        </li>
-  			<li><a href="http://html-tuts.com/?p=9961">Course</a>
-  				<ul>
-  					<li><a href="http://html-tuts.com/?p=9961">Course Name</a>
-  						<ul>
-                <li><a href="http://html-tuts.com/?p=9961">Course Topic</a>
-      						<ul>
-      							<li><a href="http://html-tuts.com/?p=9961">Topic Lessons</a></li>
-      						</ul>
-      					</li>
-  						</ul>
-  					</li>
-  				</ul>
-  			</li>
-  		</ul>
-  	</div>
-  </div>
-
-
+  <header>
+    <div class="menuBackground">
+        <div class="logo-two">
+          <%= link_to image_tag('FacentialLogo2_Transparent.png'), root_path %>
+        </div>
+    	<div class="center myMenu">
+    		<ul class="dropDownMenu">
+    			<li><a href="#">Home</a></li>
+    			<li><a href="#">Contact</a>
+    				<ul>
+    					<li><a href="#">info</a></li>
+    				</ul>
+    			</li>
+          <li><a href="#">About</a>
+            <ul>
+              <li><a href="#">Start up story</a></li>
+            </ul>
+          </li>
+    			<li><a href="http://html-tuts.com/?p=9961">Course</a>
+    				<ul>
+    					<li><a href="http://html-tuts.com/?p=9961">Course Name</a>
+    						<ul>
+                  <li><a href="http://html-tuts.com/?p=9961">Course Topic</a>
+        						<ul>
+        							<li><a href="http://html-tuts.com/?p=9961">Topic Lessons</a></li>
+        						</ul>
+        					</li>
+    						</ul>
+    					</li>
+    				</ul>
+    			</li>
+                    <% if logged_in? %>
+            <li><%= link_to "Users", '#' %></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Account <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Profile", current_user %></li>
+                <li><%= link_to "Settings", '#' %></li>
+                <li class="divider"></li>
+                <li>
+                  <%= link_to "Log out", logout_path, method: "delete" %>
+                </li>
+              </ul>
+            </li>
+        <% else %>
+          <li><%= link_to "Log in", login_path %></li>
+          <% end %>
+    		</ul>
+    	</div>
+    </div>
+  </header>
 <%= yield %>
 <script type="text/javascript">
   $('.myMenu ul li').hover(function() {

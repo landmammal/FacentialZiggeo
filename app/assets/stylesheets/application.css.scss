@@ -12,7 +12,7 @@
 // directory. It is generally better to create a new file per style scope.
 //
 
-@import 'materialize';
+// @import 'materialize';
 @import url(https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css);
 @import 'bootstrap-sprockets';
 @import 'bootstrap-variables';
@@ -22,62 +22,105 @@
 @import 'mini_chat';
 @import 'responsive';
 
-// body {
-//   padding-top: $navbar-height + 8px;
-// }
-
-.page-header {
-  a .btn {
-    float: right;
-  }
-
-  a .btn + a .btn {
-    margin-right: 8px;
-  }
-}
-
-input[type="radio"], input[type="checkbox"] {
-  width: initial;
-  height: initial;
-  margin-top: 7px;
-}
 
 
 body {
-  padding: 60px;
-  padding-bottom: 40px;
+    background: rgb(54, 25, 25); /* Fall-back for browsers that don't
+                                    support rgba */
+    background: rgba(54, 25, 25, .5);
 }
 
+h1 {
+  text-align: center;
+  font-family: 'Roboto Condensed', sans-serif;
+  // margin: 15px 0;
+  // font-size: 1.75em;
+  font-weight: normal;
+  // line-height: 0.8em;
+}
+
+h2 {
+  font-size: 0.75em;
+  margin: -5px 0 0;
+  font-weight: normal;
+}
+
+h3 {
+  font-family: 'Slabo 27px', serif;
+  color: white; text-shadow: black 0.1em 0.1em 0.2em;
+  text-align: center;
+}
+
+.logo-two img{
+  float: left;
+  clear: left;
+  height: 29em;
+  left: -1em;
+  padding: 0;
+  z-index: 3;
+  top: -8em;
+  position: absolute;
+}
+
+.logo .logo-two {
+  height: 1em;
+width: 188px;
+padding-bottom: 5px;
+padding-left: 51px;
+}
+
+.logo {
+  padding: 15px;
+}
+
+.menuBackground .coach-image {
+  border-radius: 100%;
+}
 .wrapper {
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 0 0;
-  text-align: left;
+
   font-size: 1em;
+  margin: 0 auto;
   padding-top: 8em;
+  max-width: 100%;
+  padding: 0;
+  text-align: left;
+
+}
+
+.live-chat {
+  margin: 0 auto;
+  text-align: center;
 }
 
 .displays {
-  float: left;
-  margin: 0 2em 5%;
-  display: inline-block;
-  padding: 0 3%;
   border-radius: 100%;
+  display: inline-block;
+  float: right;
+  margin: 50px 50px;
+  padding: 20px 30px;
 }
 
 .recorder {
-  display: inline-block;
-  margin: 0 2em 80px;
-  padding: 16% 4% 0 4%;
+  float: right;
+  margin: 10px 70px 80px;
+  padding: 6px 30px 11px;
+}
+
+img {
+  border-radius: 100%;
 }
 
 .coach {
-  background-color: red;
-  float: right;
-  margin: 0 0 5%;
   display: inline-block;
-  padding: 17% 2em;
-  // border-radius: 100%;
+  background-color: brown;
+  display: inline-block;
+  // float: right;
+  margin: 0 0 5%;
+  padding-top: 6%;
+  padding-right: 2em;
+  padding-bottom: 98px;
+  padding-left: 2em;
+  text-align: center;
 }
 
 div[contenteditable=true] {
@@ -88,7 +131,7 @@ div[contenteditable=true] {
 
 
 
-/*bubble lay out in trainee show*/
+/*bubble lay out in coach show*/
 
 .bubble-speech{
   position:relative;
@@ -165,6 +208,7 @@ div[contenteditable=true] {
 }
 .dropDownMenu,
 .dropDownMenu ul {
+  height: 11em;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -197,12 +241,12 @@ div[contenteditable=true] {
   box-shadow: 2px 2px 15px 0 rgba(0,0,0, 0.5);
 }
 .dropDownMenu > li > ul {
-  text-align: left;
-  display: none;
   background: green;
-  position: absolute;
-  top: 100%  ;
+  display: none;
   left: 0;
+  position: absolute;
+  text-align: left;
+  top: 100%;
   width: 240px;
   z-index: 999999;  // if you have YouTube iframes, is good to have a bigger z-index so the video can appear above the video
 }

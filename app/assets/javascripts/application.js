@@ -15,11 +15,8 @@
 //= require turbolinks
 //= require bootstrap
 //= require fancybox
-//= require materialize-sprockets
 //= require google-instant-hangouts
 //= require_tree .
-
-
 
 $(document).ready(function() {
   $("a.fancybox").fancybox();
