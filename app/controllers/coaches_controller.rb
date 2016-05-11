@@ -1,5 +1,5 @@
 class CoachesController < ApplicationController
-  # before_filter :authorize, only: [:show, :edit, :update, :destroy]
+  before_filter :authorize
   before_action :set_coach, only: [:show, :edit, :update, :destroy]
   include SessionsHelper
   # GET /coaches
@@ -29,7 +29,7 @@ class CoachesController < ApplicationController
 
       if @coach.save
         session[:coach_id] = @coach.id
-        redirect_to '/'
+        redirect_to @coach
       else
         redirect_to '/signup'
         format.html { render :new }

@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+
 gem 'hirb'
 gem "google-instant-hangouts"
 gem 'fancybox2-rails'
@@ -32,7 +33,9 @@ group :production do
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  gem 'pry-byebug' # Break in console
+  gem 'pry-rails'
+  gem 'awesome_print'
 end
 
 group :development do

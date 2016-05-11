@@ -3,10 +3,6 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   include SessionsHelper
-    def current_user
-      @current_user ||= Coach.find(session[:coach_id]) if session[:coach_id]
-    end
-    helper_method :current_user
 
     def authorize
       redirect_to '/login' unless current_user

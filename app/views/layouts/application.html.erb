@@ -53,9 +53,9 @@ by Rodger Rodriquez
     <div class="menuBackground">
       <div class="log-form">
         <% if logged_in? %>
-          <%= link_to "Log out", logout_path, class: "log-form-txt", method: "delete" %>
-          <% else %>
-          <%= link_to "Log out", login_path %>
+               <%= link_to "Log out", logout_path, method: "delete" %>
+        <% else %>
+          <%= link_to "Log in", login_path %>
         <% end %>
       </div>
         <div class="logo-two">
