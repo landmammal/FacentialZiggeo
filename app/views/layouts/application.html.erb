@@ -24,14 +24,17 @@ by Rodger Rodriquez
 <html>
 <head>
   <title>Ziggeo Facential Version</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900|Orbitron:900' rel='stylesheet' type='text/css'>
 
 
+  <script src="http://code.jquery.com/jquery-2.1.0.min.js" ></script>
+
   <link rel="stylesheet" href="//assets-cdn.ziggeo.com/v1-latest/ziggeo.css" />
   <script src="//assets-cdn.ziggeo.com/v1-latest/ziggeo.js"></script>
   <script>
-    ZiggeoApi.token ='';
+    ZiggeoApi.token ='4d3c1f53ed936045134e9617459f3f67';
   </script>
 
   <!-- bootstrap font-awesome cdn -->
@@ -48,6 +51,13 @@ by Rodger Rodriquez
 
   <header>
     <div class="menuBackground">
+      <div class="log-form">
+        <% if logged_in? %>
+          <%= link_to "Log out", logout_path, class: "log-form-txt", method: "delete" %>
+          <% else %>
+          <%= link_to "Log out", login_path %>
+        <% end %>
+      </div>
         <div class="logo-two">
           <%= link_to image_tag('FacentialLogo2_Transparent.png'), root_path %>
         </div>
@@ -77,29 +87,14 @@ by Rodger Rodriquez
     					</li>
     				</ul>
     			</li>
-                    <% if logged_in? %>
-            <li><%= link_to "Users", '#' %></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                Account <b class="caret"></b>
-              </a>
-              <ul class="dropdown-menu">
-                <li><%= link_to "Profile", current_user %></li>
-                <li><%= link_to "Settings", '#' %></li>
-                <li class="divider"></li>
-                <li>
-                  <%= link_to "Log out", logout_path, method: "delete" %>
-                </li>
-              </ul>
-            </li>
-        <% else %>
-          <li><%= link_to "Log in", login_path %></li>
-          <% end %>
     		</ul>
     	</div>
-    </div>
+      </div>
+
   </header>
+
 <%= yield %>
+
 <script type="text/javascript">
   $('.myMenu ul li').hover(function() {
   	$(this).children('ul').stop(true, false, true).slideToggle(300);

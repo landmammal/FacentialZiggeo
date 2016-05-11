@@ -24,109 +24,295 @@
 
 
 
+// body{
+// 	 background: url(http://www.timurtek.com/wp-content/uploads/2014/10/form-bg.jpg) no-repeat center center fixed;
+//   -webkit-background-size: cover;
+//   -moz-background-size: cover;
+//   -o-background-size: cover;
+//   background-size: cover;
+//   font-family:'HelveticaNeue','Arial', sans-serif;
+//
+// }
+a{color:#ccc;text-decoration: none;}
+a:hover{color:#34495E; }
+.pull-right{float: right;}
+.pull-left{float: left;}
+.clear-fix{clear:both;}
+div.logo{text-align: center;}
+.logo {
+margin-top: 20px;
+margin-bottom: 30px;
+}
+.logo-active{fill: #44aacc !important;}
+#formWrapper{
+background: rgba(0,0,0,.2);
+width:100%;
+height:100%;
+position: absolute;
+top:0;
+left:0;
+transition:all .3s ease;}
+.darken-bg{background: rgba(0,0,0,.5) !important; transition:all .3s ease;}
+
+div#form{
+position: absolute;
+width:360px;
+height:320px;
+height:auto;
+background-color: #fff;
+margin:auto;
+border-radius: 5px;
+padding:20px;
+left:50%;
+top:50%;
+margin-left:-180px;
+margin-top:-200px;
+}
+div.form-item{position: relative; display: block; margin-bottom: 20px;}
+input{transition: all .2s ease;}
+input.form-style{
+color:#8a8a8a;
+display: block;
+width: 90%;
+height: 34px;
+padding: 5px 5%;
+border:2px solid #ccc;
+-moz-background-clip: padding;
+-webkit-background-clip: padding-box;
+background-clip: padding-box;
+background-color: #fff;
+font-family:'HelveticaNeue','Arial', sans-serif;
+font-size: 105%;
+letter-spacing: .8px;
+}
+
+// style for user input
+div.form-item .form-style:focus{outline: none; border:2px solid #12AA3E; color:#12AA3E; }
+div.form-item p.formLabel {
+position: absolute;
+left:26px;
+top: -1px;
+transition:all .4s ease;
+color:#bbb;}
+
+.formTop{top:-22px !important; left:26px; background-color: #fff; padding:0 5px; font-size: 14px; color:#12AA3E !important;}
+.formStatus{color:#8a8a8a !important;}
+input[type="submit"].login{
+float:right;
+width: 100%;
+height:46px;
+-moz-background-clip: padding;
+-webkit-background-clip: padding-box;
+background-clip: padding-box;
+background-color: #12AA3E;
+border:none;
+color: #fff;
+font-size: 16px;
+}
+input[type="submit"].login:hover{background-color: rgba(#12AA3E, 0.85);  color:#fff; cursor:pointer;}
+input[type="submit"].login:focus{outline: none;}
+
+
+#other-login {
+ul {
+list-style: none;
+padding-left: 0px;
+li {
+width: 32%;
+float: left;
+margin-right: 2%;
+input.login {
+font-size: 12px;
+}
+&:last-child {
+margin-right: 0;
+}
+}
+}
+input {
+margin-bottom: 8px;
+&:first-child{
+margin-top: 22px;
+display: block;
+}
+&:last-child {
+margin-bottom: 0px;
+}
+}
+}
+input[type="submit"].login {
+&.facebook {
+background-color: #3b5998;
+}
+&.google {
+background-color: #d34836;
+}
+&.cc {
+background-color: #417EB7;
+}
+}
+
+
+input[type="submit"].login {
+&.facebook:hover {
+background-color: rgba(#3b5998,0.85);
+color: #fff;
+cursor:pointer;
+}
+&.google:hover {
+background-color: rgba(#d34836,0.85);
+color:#fff;
+cursor:pointer;
+}
+&.cc:hover {
+background-color: rgba(#417EB7,0.85);
+color:#fff;
+cursor:pointer;
+}
+}
+
+.form-item .rup-pass {
+margin-top: 5px;
+display: block;
+}
+
+.footer {
+margin-top: 16px;
+a {
+color:#ccc;
+&:hover {
+color:#34495E;
+}
+}
+.help {
+float: left;
+}
+.language {
+float: right;
+}
+}
+
+
+
+
 body {
-    background: rgb(54, 25, 25); /* Fall-back for browsers that don't
-                                    support rgba */
-    background: rgba(54, 25, 25, .5);
+background: rgb(54, 25, 25); /* Fall-back for browsers that don't
+support rgba */
+background: rgba(54, 25, 25, .5);
+font-family:'HelveticaNeue','Arial', sans-serif;
 }
 
 h1 {
-  text-align: center;
-  font-family: 'Roboto Condensed', sans-serif;
-  // margin: 15px 0;
-  // font-size: 1.75em;
-  font-weight: normal;
-  // line-height: 0.8em;
+text-align: center;
+font-family: 'Roboto Condensed', sans-serif;
+// margin: 15px 0;
+// font-size: 1.75em;
+font-weight: normal;
+// line-height: 0.8em;
 }
 
 h2 {
-  font-size: 0.75em;
-  margin: -5px 0 0;
-  font-weight: normal;
+font-size: 0.75em;
+margin: -5px 0 0;
+font-weight: normal;
 }
 
 h3 {
-  font-family: 'Slabo 27px', serif;
-  color: white; text-shadow: black 0.1em 0.1em 0.2em;
-  text-align: center;
+font-family: 'Slabo 27px', serif;
+color: white; text-shadow: black 0.1em 0.1em 0.2em;
+text-align: center;
 }
 
 .logo-two img{
-  float: left;
-  clear: left;
-  height: 29em;
-  left: -1em;
-  padding: 0;
-  z-index: 3;
-  top: -8em;
-  position: absolute;
+float: left;
+clear: left;
+height: 29em;
+left: -1em;
+padding: 0;
+z-index: 3;
+top: -8em;
+position: absolute;
 }
 
 .logo .logo-two {
-  height: 1em;
+height: 1em;
 width: 188px;
 padding-bottom: 5px;
 padding-left: 51px;
 }
 
 .logo {
-  padding: 15px;
+// padding: 15px;
 }
 
 .menuBackground .coach-image {
-  border-radius: 100%;
+border-radius: 100%;
 }
 .wrapper {
 
-  font-size: 1em;
-  margin: 0 auto;
-  padding-top: 8em;
-  max-width: 100%;
-  padding: 0;
-  text-align: left;
+font-size: 1em;
+margin: 0 auto;
+padding-top: 8em;
+max-width: 100%;
+padding: 0;
+text-align: left;
 
 }
 
 .live-chat {
-  margin: 0 auto;
-  text-align: center;
+margin: 0 auto;
+text-align: center;
 }
 
 .displays {
-  border-radius: 100%;
-  display: inline-block;
-  float: right;
-  margin: 50px 50px;
-  padding: 20px 30px;
+border-radius: 100%;
+display: inline-block;
+float: right;
+margin: 50px 50px;
+padding: 20px 30px;
 }
 
 .recorder {
-  float: right;
-  margin: 10px 70px 80px;
-  padding: 6px 30px 11px;
+float: right;
+margin: 10px 70px 80px;
+padding: 6px 30px 11px;
 }
 
 img {
-  border-radius: 100%;
+border-radius: 100%;
 }
 
 .coach {
-  display: inline-block;
-  background-color: brown;
-  display: inline-block;
-  // float: right;
-  margin: 0 0 5%;
-  padding-top: 6%;
-  padding-right: 2em;
-  padding-bottom: 98px;
-  padding-left: 2em;
-  text-align: center;
+display: inline-block;
+background-color: brown;
+display: inline-block;
+margin: 0 0 0;
+padding-top: 6%;
+padding-right: 2em;
+padding-bottom: 225px;
+padding-left: 2em;
+text-align: center;
 }
 
+
+.log-form-txt:hover {
+  color: white;
+  decoration: none;
+}
+
+.log-form {
+  font-size: .8em;
+  color: darkblue;
+}
+
+.log-form {
+padding-left: 90%;
+font-size: 1em;
+}
 div[contenteditable=true] {
-  border: 1px dashed #AAA;
-  width: 290px;
-  padding: 5px;
+border: 1px dashed #AAA;
+width: 290px;
+padding: 5px;
 }
 
 
@@ -134,140 +320,144 @@ div[contenteditable=true] {
 /*bubble lay out in coach show*/
 
 .bubble-speech{
-  position:relative;
-  font-family: 'Source Sans Pro', sans-serif;
-  margin:auto;
-  line-height:22px;
-  letter-spacing:1px;
-  margin-top:16px;
-  margin-bottom:48px;
-  width:300px;
-  background-color: #efefef;
-  padding:16px;
+font-size: 1.1em;
+position:relative;
+font-family: 'Source Sans Pro', sans-serif;
+margin:auto;
+line-height:22px;
+letter-spacing:1px;
+margin-top:16px;
+margin-bottom:48px;
+width:550px;
+background-color: #efefef;
+padding:16px;
 
 }
 
 .bubble-speech.bubble-left:after{
-  z-index: 9002;
-  display: block;
-  content: "";
-  position:absolute;
-  bottom:-12px;
-  left: 0;
-  border-top: 0 #efefef solid;
-  border-bottom: 12px transparent solid;
-  border-left: 20px  #efefef solid;
+z-index: 9002;
+display: block;
+content: "";
+position:absolute;
+bottom:-12px;
+left: 0;
+border-top: 0 #efefef solid;
+border-bottom: 12px transparent solid;
+border-left: 20px  #efefef solid;
 }
 
 .bubble-square{
-  width:33px;
-  height:25px;
-  text-align:center;
+width:33px;
+height:25px;
+text-align:center;
 }
 
 .bubble-speech.bubble-center:after{
-  z-index: 9002;
-  display: block;
-  content: "";
-  position:absolute;
-  bottom:-12px;
-  left: 50%;
-  margin-left:-18px;
-  border-right: 20px transparent solid;
-  border-top: 12px #efefef solid;
-  border-left: 20px  transparent solid;
+z-index: 9002;
+display: block;
+content: "";
+position:absolute;
+bottom:-12px;
+left: 50%;
+margin-left:-18px;
+border-right: 20px transparent solid;
+border-top: 12px #efefef solid;
+border-left: 20px  transparent solid;
 }
 
 .bubble-speech.bubble-right:after{
-  z-index: 9002;
-  display: block;
-  content: "";
-  position:absolute;
-  bottom:-12px;
-  right: 0;
-  border-top: 0 #efefef solid;
-  border-bottom: 12px transparent solid;
-  border-right: 20px  #efefef solid;
+z-index: 9002;
+display: block;
+content: "";
+position:absolute;
+bottom:-12px;
+right: 0;
+border-top: 0 #efefef solid;
+border-bottom: 12px transparent solid;
+border-right: 20px  #efefef solid;
 }
 
 .bubble-speech .author{
-  max-width:200px;
-  font-weight:bold;
-  margin:0;
-  padding: 0 12px 2px 0;
+font-size: 1em;
+max-width:200px;
+font-weight:bold;
+margin:0;
+padding: 0 12px 2px 0;
 }
 
 
 /* General Styles for Menu  */
 .menuBackground {
-  background: brown;
-  text-align: center;
+background: brown;
+text-align: center;
 }
 .dropDownMenu a {
-  color: #FFF;
+color: #FFF;
 }
 .dropDownMenu,
 .dropDownMenu ul {
-  height: 11em;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+height: 11em;
+list-style: none;
+margin: -21px;
+padding: 0;
 }
 .dropDownMenu li {
-  position: relative;
+position: relative;
 }
 .dropDownMenu a {
-  padding: 10px 20px;
-  display: block;
-  text-decoration: none;
+padding: 10px 20px;
+display: block;
+text-decoration: none;
+margin-top: 4em;
+font-size: 1.5em;
 }
 .dropDownMenu a:hover {
-  background: #000;
+background: #000;
 }
 
 
 /* Level 1 Drop Down */
 .dropDownMenu > li {
-  display: inline-block;
-  vertical-align: top;
-  margin-left: -4px; /* solve the 4 pixels spacing between list-items */
+display: inline-block;
+vertical-align: top;
+margin-left: -4px; /* solve the 4 pixels spacing between list-items */
 }
 .dropDownMenu > li:first-child {
-  margin-left: 0;
+margin-left: 0;
 }
 
 /* Level 2 */
 .dropDownMenu ul {
-  box-shadow: 2px 2px 15px 0 rgba(0,0,0, 0.5);
+box-shadow: 2px 2px 15px 0 rgba(0,0,0, 0.5);
 }
-.dropDownMenu > li > ul {
-  background: green;
-  display: none;
-  left: 0;
-  position: absolute;
-  text-align: left;
-  top: 100%;
-  width: 240px;
-  z-index: 999999;  // if you have YouTube iframes, is good to have a bigger z-index so the video can appear above the video
+.dropDownMenu ul {
+background: green;
+display: none;
+left: 0;
+position: absolute;
+text-align: left;
+top: 100%;
+width: 240px;
+z-index: 999999;  // if you have YouTube iframes, is good to have a bigger z-index so the video can appear above the video
 }
 
 //* Level 3 */
 .dropDownMenu > li > ul > li > ul {
-  background: darkcyan;
-  display: none;
-  left: 100%;
-  position: absolute;
-  text-align: left;
-  top: 0;
-  z-index: 9999999;
+background: darkcyan;
+display: none;
+left: 100%;
+position: absolute;
+text-align: left;
+top: 0;
+z-index: 9999999;
 }
 //* Level 4 */
 .dropDownMenu > li > ul > li > ul > li > ul {
-  background: #0000ff;
-  display: none;
-  left: 100%;
-  position: absolute;
-  text-align: left;
-  top: 0;
-  z-index: 9999999;
+background: #0000ff;
+display: none;
+left: 100%;
+position: absolute;
+text-align: left;
+top: 0;
+z-index: 9999999;
 }

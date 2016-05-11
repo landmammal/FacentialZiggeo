@@ -1,18 +1,47 @@
 <h1>Log in</h1>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(:session, url: login_path) do |f| %>
+<div id="formWrapper">
+    <div id="form">
+      <div class="logo">
+          <%= link_to image_tag('insta_logo.png'), root_path %>
+      </div>
+        <%= form_for(:session, url: login_path) do |f| %>
+      <div class="form-item">
+        <p class="formLabel">Email</p>
 
-      <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control' %>
+        <!-- <input type="email" name="email" id="email" class="form-style" autocomplete="off" /> -->
+        <%= f.email_field :email, class: "form-style" %>
 
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
+      </div>
+      <div class="form-item">
+        <p class="formLabel">Password</p>
+        <!-- <input type="password" name="password" id="password" class="form-style" /> -->
+        <%= f.password_field :password, class: "form-style", id:"password"  %>
+        <p class="rup-pass"><a href="#"><small>Forgot Password ?</small></a></p>
+        <!-- <div class="pw-view"><i class="fa fa-eye"></i></div> -->
+      </div>
 
-      <%= f.submit "Log in", class: "btn btn-primary" %>
-    <% end %>
 
-    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+      <div class="form-item">
+        <!-- <input type="submit" class="login pull-right" value="Log In"> -->
+        <%= f.submit "Log in", class: "login pull-right" %>
+      <% end %>
+      </div>
+      <!-- <p class="pull-left"><a href="#"><small>Register</small></a></p> -->
+      <p><%= link_to "Register", signup_path, class: "pull-left" %></p>
+      <div id="other-login">
+        <ul>
+          <li><input type="submit" class="login facebook pull-right" value="Log in Facebook"></li>
+          <li><input type="submit" class="login google pull-right" value="Log in Google+"></li>
+        </ul>
+      </div>
+      <div class="clear-fix"></div>
+      <div class="footer">
+        <p class="help"><a href="#"><small><i class="fa fa-life-ring"></i> help</small></a></p>
+        <p class="language"><a href="#"><small><i class="fa fa-globe"></i> language(English)</small></a></p>
+      </div>
+    </div>
   </div>
-</div>
+
+
+<!-- <p>New user? <%= link_to "Sign up now!", signup_path %></p> -->

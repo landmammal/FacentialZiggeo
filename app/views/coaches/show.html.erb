@@ -27,13 +27,14 @@
 
      <h3>Scenario</h3>
         <ziggeo
+          ziggeo-video='03c493830b42b6137e46ee50e195c027'
           ziggeo-width=450
           ziggeo-height=300>
         </ziggeo>
 
       <h3>Role Model</h3>
       <ziggeo
-        ziggeo-video='2142920c6313e3be80f5b92e5462e770'
+        ziggeo-video='b4471617706253eba677250fbc10b9f5'
         ziggeo-width=450
         ziggeo-height=390>
       </ziggeo>
@@ -43,7 +44,7 @@
     <div class="recorder">
       <h3>Practice</h3>
       <ziggeo
-        ziggeo-video="3f733ad37576a10c81ffc6038eab3b29"
+        ziggeo-video=""
         ziggeo-width=800
         ziggeo-height=605>
       </ziggeo> <br>
@@ -56,7 +57,7 @@
     </h2>
 
     <div class="message">
-      Here will go the dialogue that the user needs to read to while recording the example.
+      Unfortunately, we don't allow pet's on the property, but I'd be more than happy to set you up with a nearby pet hotel and offer you a discount for your stay.
     </div>
   </div>
   </div>
@@ -69,6 +70,7 @@
 
 <script >
       ZiggeoApi.Events.on("submitted", function (data) {
+          // better namig variable
           var video = data.video.tokena
       });
 
