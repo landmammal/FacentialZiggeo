@@ -6,10 +6,15 @@
   <%= instant_hangout topic: 'My Hangout' %>
    <!-- <img src="http://placehold.it/350x300"> -->
   <strong>Coach:</strong>
-    <%= @coach.name %><br>
+
+    <div class="coach-info">
+      <%= @coach.name %> <br>
+    </div>
 
   <strong>Hang-Out Email:</strong>
-    <%= @coach.email %><br>
+    <div class="coach-info">
+      <%= @coach.email %><br>
+    </div>
     <br>
     <%= render 'chat' %>
 </div>

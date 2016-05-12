@@ -33,6 +33,15 @@
 //   font-family:'HelveticaNeue','Arial', sans-serif;
 //
 // }
+b, strong {
+    font-weight: bold;
+    color: white;
+}
+
+.coach-info {
+  color: green;
+}
+
 a{color:#ccc;text-decoration: none;}
 a:hover{color:#34495E; }
 .pull-right{float: right;}
@@ -224,13 +233,14 @@ text-align: center;
 }
 
 .logo-two img{
+border-radius: 100%;
 float: left;
 clear: left;
-height: 29em;
-left: -1em;
-padding: 0;
+height: 10em;
+left: 1em;
+padding: 5px;
 z-index: 3;
-top: -8em;
+top: 0em;
 position: absolute;
 }
 
@@ -278,13 +288,13 @@ margin: 10px 70px 80px;
 padding: 6px 30px 11px;
 }
 
-img {
-border-radius: 100%;
-}
+// . img {
+// border-radius: 100%;
+// }
 
 .coach {
 display: inline-block;
-background-color: brown;
+background-color: #121328;
 display: inline-block;
 margin: 0 0 0;
 padding-top: 6%;
@@ -296,7 +306,7 @@ text-align: center;
 
 
 .log-form-txt:hover {
-  color: white;
+  color: #121328;
   decoration: none;
 }
 
@@ -388,7 +398,7 @@ padding: 0 12px 2px 0;
 
 /* General Styles for Menu  */
 .menuBackground {
-background: brown;
+background: #121328;
 text-align: center;
 }
 .dropDownMenu a {
