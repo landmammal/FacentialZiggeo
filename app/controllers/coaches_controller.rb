@@ -31,7 +31,7 @@ class CoachesController < ApplicationController
         redirect_to @coach
       else
         redirect_to '/signup'
-        format.html { render :new }
+        # format.html { render :new }
         format.json { render json: @coach.errors, status: :unprocessable_entity }
       end
 
