@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   resources :coaches
-  root 'coaches#new'
+  root 'coaches#index'
 
 
   # these routes are for showing users a login form, logging them in, and logging them out.
