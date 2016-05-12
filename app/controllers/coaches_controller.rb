@@ -1,5 +1,5 @@
 class CoachesController < ApplicationController
-  before_filter :authorize, only: [:show]
+  # before_filter :authorize, only: [:show]
   before_action :set_coach, only: [:show, :edit, :update, :destroy]
   include SessionsHelper
   # GET /coaches
