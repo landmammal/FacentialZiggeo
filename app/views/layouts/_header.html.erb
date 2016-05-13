@@ -2,14 +2,14 @@
   <div class="menuBackground">
     <div class="log-form">
       <% if logged_in? %>
-             <%= link_to "Log in", logout_path, method: "delete" %>
+             <%= link_to "", logout_path, method: "delete" %>
       <% else %>
         <%= link_to "Log in", login_path %>
       <% end %>
     </div>
-      <div class="logo-two">
+      <!-- <div class="logo-two">
         <a href="http://www.facential.com/index.html"><%= link_to image_tag('new logo.jpg'), root_path %></a>
-      </div>
+      </div> -->
     <div class="center myMenu">
       <ul class="dropDownMenu">
         <li><a href="http://www.facential.com/index.html">Home</a></li>
