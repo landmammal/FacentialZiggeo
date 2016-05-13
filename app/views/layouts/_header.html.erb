@@ -1,0 +1,37 @@
+<header>
+  <div class="menuBackground">
+    <div class="log-form">
+      <% if logged_in? %>
+             <%= link_to "Log in", logout_path, method: "delete" %>
+      <% else %>
+        <%= link_to "Log in", login_path %>
+      <% end %>
+    </div>
+      <div class="logo-two">
+        <a href="http://www.facential.com/index.html"><%= link_to image_tag('new logo.jpg'), root_path %></a>
+      </div>
+    <div class="center myMenu">
+      <ul class="dropDownMenu">
+        <li><a href="http://www.facential.com/index.html">Home</a></li>
+        <li><a href="http://www.facential.com/contact.html">Contact</a>
+        </li>
+        <li><a href="http://www.facential.com/about.html">About</a>
+        </li>
+        <li><a href="http://www.facential.com/platform.html">Course</a>
+          <ul>
+            <li><a href="http://www.facential.com/platform.html">Course Name</a>
+              <ul>
+                <li><a href="http://www.facential.com/platform.html">Course Topic</a>
+                  <ul>
+                    <li><a href="http://www.facential.com/platform.html">Topic Lessons</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    </div>
+
+</header>
