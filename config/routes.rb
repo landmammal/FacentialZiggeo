@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
 
-  resources :coaches
+  resources :coaches do
+    member do
+      post "token"
+    end
+  end
   root 'coaches#index'
+  post '/token' => 'coaches#token'
 
 
   # these routes are for showing users a login form, logging them in, and logging them out.

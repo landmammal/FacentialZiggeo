@@ -1,9 +1,21 @@
 class CoachesController < ApplicationController
   # before_filter :authorize, only: [:show]
-  before_action :set_coach, only: [:show, :edit, :update, :destroy]
+  before_action :set_coach, only: [:show, :edit, :update, :destroy, :token]
   include SessionsHelper
   # GET /coaches
   # GET /coaches.json
+  def token
+    token = token_params[:field]
+    @coach.field = token
+    binding.pry
+
+    if @coach.save!
+      # binding.pry
+    render json: @coach.field, status: :ok
+  end
+  end
+
+
   def index
   end
 
@@ -67,8 +79,11 @@ class CoachesController < ApplicationController
       @coach = Coach.find(params[:id])
     end
 
+    def token_params
+      params.require(:coach).permit(:field)
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def coach_params
-      params.require(:coach).permit(:name, :email, :avatar, :password, :password_confirmation)
+      params.require(:coach).permit(:name, :email, :avatar, :password, :password_confirmation, :token)
     end
 end

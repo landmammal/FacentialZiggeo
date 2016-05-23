@@ -70,13 +70,36 @@
 
 <!-- </div> -->
 
+<%= form_for @coach, url: token_coach_path(@coach),
+                                                    html: {id: "tokenForm"},
+                                                    remote: true,
+                                                    method: 'post' do |f| %>
+<%= f.hidden_field :field %>
+<% end %>
 
 
 
 <script >
+  function postVideoToken(videoToken){
+    console.dir(videoToken);
+    console.log(videoToken);
+    $form = $('#tokenForm');
+    $field = $('#coach_field');
+    $field.val(videoToken);
+    console.log(videoToken);
+    $form.submit();
+    // $.ajax ({
+    //   url : "/token",
+    //   type : "post",
+    //   data : {token: videoToken}
+    // });
+  }
       ZiggeoApi.Events.on("submitted", function (data) {
-          // better namig variable
-          var video = data.video.tokena
-      });
+          // better naming variable
+          var videoToken = data.video.token
+          console.dir({dataVideo: data.video})
+          postVideoToken(videoToken);
+          // alert(videoToken)
 
+      });
 </script>
